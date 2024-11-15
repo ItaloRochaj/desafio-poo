@@ -1,6 +1,4 @@
-import br.com.desadio.dominio.Conteudo;
-import br.com.desadio.dominio.Curso;
-import br.com.desadio.dominio.Mentoria;
+import br.com.desadio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -21,8 +19,28 @@ public class Main {
         mentoria.setDescricao("Descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+//        System.out.println(curso1);
+//        System.out.println(curso2);
+//        System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devItalo = new Dev();
+        devItalo.setNome("Italo");
+        devItalo.inscreverBootcamp(bootcamp);
+        System.out.printf("Conteudos Inscritos" + devItalo.getConteudosInscritos());
+
+        Dev devLuke = new Dev();
+        devLuke.setNome("Luke");
+        devLuke.inscreverBootcamp(bootcamp);
+        System.out.printf("Conteudos Inscritos" + devLuke.getConteudosInscritos());
+
+
+
     }
 }
