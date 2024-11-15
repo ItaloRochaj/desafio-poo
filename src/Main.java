@@ -1,3 +1,4 @@
+import br.com.desadio.dominio.Conteudo;
 import br.com.desadio.dominio.Curso;
 import br.com.desadio.dominio.Mentoria;
 
